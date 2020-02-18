@@ -72,6 +72,8 @@ SimulatedNao = cppDynamicLibrary + {
     "$(utilDirRoot)/SimRobot/Src/SimRobotEditor"
     "$(utilDirRoot)/snappy/include"
     "$(utilDirRoot)/asmjit/src"
+    "$(utilDirRoot)/opencv/include/x64/opencv"
+    "$(utilDirRoot)/opencv/include/x64"
     if (host == "Win32") {
       "$(utilDirRoot)/SimRobot/Util/qt/Windows/include"
       "$(utilDirRoot)/SimRobot/Util/qt/Windows/include/QtCore"
@@ -95,6 +97,7 @@ SimulatedNao = cppDynamicLibrary + {
     "$(buildPlatformDir)/Controller/$(configuration)"
     "$(buildPlatformDir)/qtpropertybrowser/$(configuration)"
     "$(buildPlatformDir)/libqxt/$(configuration)"
+    "$(utilDirRoot)/opencv/lib/x64"
     if (platform == "Linux") {
       "$(utilDirRoot)/fftw-3.3/Linux64"
       "$(utilDirRoot)/libjpeg/lib/Linux"
@@ -108,7 +111,8 @@ SimulatedNao = cppDynamicLibrary + {
   }
 
   libs = {
-    "Controller", "qtpropertybrowser", "qxt"
+    "Controller", "qtpropertybrowser", "qxt",
+    "opencv_video", "opencv_objdetect", "opencv_highgui", "opencv_imgproc", "opencv_core", "ippicv", "z"
     if (host == "Win32") {
       if (configuration == "Debug") {
         "Qt5Cored", "Qt5Guid", "Qt5OpenGld", "Qt5Svgd", "Qt5Widgetsd"

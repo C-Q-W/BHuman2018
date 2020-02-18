@@ -57,6 +57,8 @@ Nao = cppApplication + {
     "$(utilDirRoot)/libjpeg/src"
     "$(utilDirRoot)/snappy/include"
     "$(utilDirRoot)/asmjit/src"
+    "$(utilDirRoot)/opencv/include/x86/opencv"
+    "$(utilDirRoot)/opencv/include/x86"
   }
 
   libPaths = {
@@ -64,10 +66,12 @@ Nao = cppApplication + {
     "$(utilDirRoot)/libjpeg/lib/Linux"
     "$(utilDirRoot)/Buildchain/gcc/lib"
     "$(utilDirRoot)/snappy/lib/Linux/x86"
+    "$(utilDirRoot)/opencv/lib/x86"
   }
 
   libs = {
-    "rt-2.13", "jpeg-atom", "pthread-2.13", "pthread_nonshared", "fftw3", "fftw3f", "snappy", "asound", "dl-2.13"
+    "rt-2.13", "jpeg-atom", "pthread-2.13", "pthread_nonshared", "fftw3", "fftw3f", "snappy", "asound", "dl-2.13",
+    "opencv_video", "opencv_objdetect", "opencv_highgui", "opencv_imgproc", "opencv_core", "ippicv", "z"
   }
 
   cppFlags += {
